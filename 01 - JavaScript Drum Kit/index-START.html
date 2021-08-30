@@ -59,6 +59,18 @@
 
 <script>
 
+  const onKeyPress = (e) => {
+    let keyCode = e.key.toUpperCase().charCodeAt().toString();
+    console.log(keyCode);
+    const key = document.querySelector(`.key[data-key=${CSS.escape(keyCode)}]`);
+    if (key) {
+      key.classList.toggle('playing');
+    }
+  }
+
+  document.addEventListener('keypress', onKeyPress);
+
+
 </script>
 
 
